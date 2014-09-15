@@ -53,9 +53,13 @@ There are many hash function that can be used.
 We decided to use the hash-Rabin because it very quickly.
 
 For the phrase "Detecting near duplicates" we get the following 64-bit hash.
+
 Detecting - 0000000000000000000000000000000000000000000110100111110100001011
+
 Near - 0000000000000000000000000000000000000000000011110000000000010111
+
 Duplicates - 0000000000000000000000000000000001111101100000110110100101111111
+
 
 #How do you calculate a fingerprint?
 
@@ -64,24 +68,36 @@ If the bit vector word 1 increases resulting vector 1, but (<= 1) decreases in t
 example:
 
 Initial vector    0  0 0  0 0  0  0 0 0 0 0 0 0  0  0  0  0  0  0 0 0 0
+
 Detecting -       0  1 1  0 1  0  0 1 1 1 1 1 0  1  0  0  0  0  1 0 1 1
-Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
 
 Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
+
+
+Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
+
 Near -            0  0 1  1 1  1  0 0 0 0 0 0 0  0  0  0  0  1  0 1 1 1
+
 Result Vector2 -  1 -2 2  0-2  2  0 0 0 0 0 0 0 -2 -2 -2 -2 -1  0 2 0 2
 
+
 Result Vector2 -  1 -2 2 0 -2 2 0 0 0 0 0 0 0 -2 -2 -2 -2 -1 0 2 0 2
+
 Duplicates -      1  1 0 0  0 0 0 1 1 0 1 1 0  1  0  0  1  0 1 1 1 1
 
+
 Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
+
 
 Once you have applied all the characterizations in hash format, generate the fingerprint as follows:
 If the resulting vector is negative or 0, the fingerprint in that position is 0, otherwise it would be 1.
 In this example the fingerprint be as follows:
 
+
 Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
+
 Fingerprint       0  1 1  0 1  0 0  1 1 0 1  1  0  1  0  0  0 0 1 1 1 1
+
 
 #Hamming distance.
 
