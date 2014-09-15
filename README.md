@@ -111,4 +111,5 @@ We consider that two documents are near-duplicates when the K-Hamming distance r
 ##Usage
 
 >dedup.jar [file1] [file2]  max [max ngrams] min [min ngrams]
+
 >dedup.jar text_sample_2.txt text_sample_1.txt  max 3 min 3
