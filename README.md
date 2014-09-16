@@ -54,10 +54,11 @@ We decided to use the hash-Rabin because it very quickly.
 
 For the phrase "Detecting near duplicates" we get the following 64-bit hash.
 
+```sh
 > Detecting - 0000000000000000000000000000000000000000000110100111110100001011
 > Near - 0000000000000000000000000000000000000000000011110000000000010111
 > Duplicates - 0000000000000000000000000000000001111101100000110110100101111111
-
+```
 
 ##How do you calculate a fingerprint?
 
@@ -65,6 +66,7 @@ We start from a 64-bit vector with all 0, for each hash obtained from the docume
 If the nth bit vector is 1, increases resulting vector 1, but if its (<= 1) decreases in 1.
 example:
 
+```sh
 > Initial vector    0  0 0  0 0  0  0 0 0 0 0 0 0  0  0  0  0  0  0 0 0 0
 > Detecting -       0  1 1  0 1  0  0 1 1 1 1 1 0  1  0  0  0  0  1 0 1 1
 > Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
@@ -77,16 +79,16 @@ example:
 > Duplicates -      1  1 0 0  0 0 0 1 1 0 1 1 0  1  0  0  1  0 1 1 1 1
 
 > Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
-
+```
 
 Once you have applied all the characterizations in hash format, generate the fingerprint as follows:
 If the resulting vector is negative or 0, the fingerprint in that position is 0, otherwise it would be 1.
 In this example the fingerprint be as follows:
 
-
+```sh
 > Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
 > Fingerprint       0  1 1  0 1  0 0  1 1 0 1  1  0  1  0  0  0 0 1 1 1 1
-
+```
 
 #Hamming distance.
 
@@ -99,7 +101,13 @@ We consider that two documents are near-duplicates when the K-Hamming distance r
 
 #Usage
 
+After compiling the source code, you will have a file called dedup.jar. This utility needs several parameters:
+[file1] File to compare 1
+[file2] File to compare 2
+[max grams] n-grams number max.
+[min gram] n-grams number min
+
 ```sh
-dedup.jar [file1] [file2]  max [max ngrams] min [min ngrams]
-dedup.jar text_sample_2.txt text_sample_1.txt  max 3 min 3
+java -jar dedup.jar [file1] [file2]  max [max ngrams] min [min ngrams]
+java -jar dedup.jar text_sample_2.txt text_sample_1.txt  max 3 min 3
 ```
