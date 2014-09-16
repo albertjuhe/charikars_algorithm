@@ -111,3 +111,24 @@ After compiling the source code, you will have a file called dedup.jar. This uti
 java -jar dedup.jar [file1] [file2]  max [max ngrams] min [min ngrams]
 java -jar dedup.jar text_sample_2.txt text_sample_1.txt  max 3 min 3
 ```
+#Output
+
+This is an output sample.
+
+```sh
+Near duplicates detector
+Charika simhash, with hashRabin and Hamming distance.
+Token ngrams 3-3.
+time taken to load all available language-models: 0.086s
+time taken to create language-model from input: 0.018s
+time taken to effectively determine the language: 0.011s
+Loading English Steemer.
+201 millisegons
+time taken to load all available language-models: 0.048s
+time taken to create language-model from input: 0.0040s
+time taken to effectively determine the language: 0.0030s
+Hamming-distance:0
+Jaccard-Coeficient:100.0%
+IS NEAR-DUPLICATE, COULD BE THE SAME DOCUMENTS.
+287 millisegons
+```
