@@ -67,18 +67,16 @@ If the nth bit vector is 1, increases resulting vector 1, but if its (<= 1) decr
 example:
 
 ```sh
-> Initial vector    0  0 0  0 0  0  0 0 0 0 0 0 0  0  0  0  0  0  0 0 0 0
-> Detecting -       0  1 1  0 1  0  0 1 1 1 1 1 0  1  0  0  0  0  1 0 1 1
-> Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
+Init Vector  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+Detecting    0   1   1   0   1   0   0   1   1   1   1   1   0   1   0   0   0   0   1   0   1   1
 
-> Result Vector1 -  1 -1 1 -1 1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1
-> Near -            0  0 1  1 1  1  0 0 0 0 0 0 0  0  0  0  0  1  0 1 1 1
-> Result Vector2 -  1 -2 2  0-2  2  0 0 0 0 0 0 0 -2 -2 -2 -2 -1  0 2 0 2
+Vector res. -1   1  1  -1  1  -1  -1   1   1   1   1   1  -1   1  -1  -1  -1  -1  1 -1   1   1
+Near         0   0  1   1   1  1   0   0   0   0   0   0   0   0   0   0   0   1  0  1   1   1
 
-> Result Vector2 -  1 -2 2 0 -2 2 0 0 0 0 0 0 0 -2 -2 -2 -2 -1 0 2 0 2
-> Duplicates -      1  1 0 0  0 0 0 1 1 0 1 1 0  1  0  0  1  0 1 1 1 1
+Vector res.  -2  1   2   0   2   0  -2  0   0   0   0   0   -2  0   -2  -2  -2   0 -1  0   2   2  
+Duplicates    1  1   0   0   0   0   0  1   1   0   1   1    0  1    0   0   1   0  1  1   1   1
 
-> Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
+Vector res.  -1  2   1  -1   1  -1  -3  1   1  -1   1   1   -3   1  -3  -3  -1  -1  0  1   3   3   
 ```
 
 Once you have applied all the characterizations in hash format, generate the fingerprint as follows:
@@ -86,8 +84,8 @@ If the resulting vector is negative or 0, the fingerprint in that position is 0,
 In this example the fingerprint be as follows:
 
 ```sh
-> Result Vector3.   2 -1 1 -1 1 -1 1 -1 1 1 1 -3 -3 -3 -3 -1 -1 1 1 0 3 3
-> Fingerprint       0  1 1  0 1  0 0  1 1 0 1  1  0  1  0  0  0 0 1 1 1 1
+> Result Vector3.  -1  2  1  -1  1  -1  -3   1  1  -1   1  1   -3   1   -3   -3  -1  -1  0 1 3 3   
+> Fingerprint       0  1  1   0  1   0   0   1  1   0   1  1    0   1    0    0   0   0  0 1 1 1
 ```
 
 #Hamming distance.
