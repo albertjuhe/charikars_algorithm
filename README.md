@@ -4,9 +4,9 @@ Detection of near-duplicate documents
 When you have lots of digital documents you would like to know how many duplicates or near-duplicates exist on your storage devices, because you want to clean up space, detect plagiarism or avoid include documents with different versions. 
 Duplicate documents:
 When you need to find documents that are exact copies, these are easy to find - just calculate a checksum and compare with others.
-Near-duplicate: documents differ from each other in a very small portion, for example a document life cycle, you want to find documents which basically are different versions of the same document.
+Near-duplicate: documents differ from each other in a very small portion, could be useful for a document life cycle or if you want to find documents which basically are different versions of the same document.
 
-This software is near-duplicate detection system that uses Charikar's fingerprinting technique and Rabin-Hash function.
+This software is near-duplicate detection system and uses Charikar's fingerprinting technique and Rabin-Hash function.
 
 #Charikars algorithm implementation
 
@@ -31,7 +31,7 @@ Characterizing Document is what things makes a document different from the other
 
 It is up to us to define what is the most appropriate feature to generate the fingerprint.
 
-One thing that characterize is  a technique known as shingling. This technique consist to split documents in Shingles, set of words grouped in n n, also called n-gram grouping.
+One way to characterize is using a technique known as shingling. This technique consist to split documents in Shingles, set of words grouped in n and n, also called n-gram grouping.
 
 For example, shingling in 3-grams:
      Phrase: detecting near duplicates of documents
