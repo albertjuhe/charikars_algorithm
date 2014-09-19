@@ -62,8 +62,8 @@ For the phrase "Detecting near duplicates" we get the following 64-bit hash.
 
 ##How do you calculate a fingerprint?
 
-We start from a 64-bit vector with all 0, for each hash obtained from the documen we have to apply the following function:
-If the nth bit vector is 1, increases resulting vector 1, but if its (<= 1) decreases in 1.
+We start from a n-bit (despends on hash algorithm) vector with all 0, for each hash obtained from the documen we have to apply the following function:
+If the n-th bit vector is 1, increases resulting vector 1, but if its (<= 1) decreases in 1.
 example:
 
 ```sh
