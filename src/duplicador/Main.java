@@ -16,8 +16,7 @@
  Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 
  Authors: Albert Juhé, Universidad Oberta de Catalunya; 
- You may contact the author at [ajuhe@omaonk.com]
- And the copyright holder at [jrivera@uoc.es] [Av. Tibidabo 39-43 - 08035 Barcelona]
+ You may contact the author at [ajuhe@fados.produccions.com]
 */
 
 package duplicador;
